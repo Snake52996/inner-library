@@ -1,6 +1,11 @@
 <div id="footer">
 	<p>
-	©<span id="footerYear"></span> 
+	©
+	<% if(new Date().getFullYear() == theme.siteStartYear) { %>
+		<%- theme.siteStartYear %>
+	<% } else { %>
+		<%- theme.siteStartYear %>-<%= new Date().getFullYear() %>
+	<% } %>
 	<a href="/"><%- config.author %></a> 
 	
 	<% if (theme.busuanzi){ %>
@@ -21,8 +26,3 @@
 	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
 	</p>
 </div>
-<script type="text/javascript"> 
-	let footerYear = document.getElementById('footerYear');
-	if(new Date().getFullYear() + '' === '<%- theme.siteStartYear %>') footerYear.innerHTML = '<%- theme.siteStartYear %>';
-	else footerYear.innerHTML = '<%- theme.siteStartYear %>-' + new Date().getFullYear();
-</script>

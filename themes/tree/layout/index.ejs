@@ -6,7 +6,7 @@
 					<%- post.slug.split("/")[post.slug.split("/").length-1] %>
 				</h2>
 				<div class="index-brief">
-					<%- post.more.replace(/<\/?.+?\/?>/g, "").substring(0, 150) %>
+					<%- post.more/*.replace(/<\/?.+?\/?>/g, "")*/.substring(0, 150) %>
 					...
 				</div>
 			</a>
